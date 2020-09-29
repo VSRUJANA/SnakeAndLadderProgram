@@ -6,13 +6,18 @@ namespace Snake_And_Ladder_simulator
     {
         static void Main(string[] args)
         {
-            const int START_POINT = 0;
             Console.WriteLine("Welcome to Snake and Ladder Simulator !");
             Console.WriteLine("Enter your name");
             string playerName = Console.ReadLine();
-            int currentPosition = START_POINT;
-            Console.WriteLine("Your position is : " + currentPosition);
+            Console.WriteLine("Number rolled on the die : " + Roll());
         }
-
+        static int Roll()
+        {
+            Random random = new Random();
+            int diceValue = random.Next(1, 7);
+            return diceValue;
+        }
     }
 }
+
+
