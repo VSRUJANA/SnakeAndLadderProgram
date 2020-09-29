@@ -12,16 +12,18 @@ namespace Snake_And_Ladder_simulator
         static int currentPosition = 0;
         static void Main(string[] args)
         {
+            int i = 0;
             Console.WriteLine("Welcome to Snake and Ladder Simulator !");
             do
             {
                 int numberRolled = Roll();
                 currentPosition = Movement(numberRolled);
+                i++;
+                Console.WriteLine("Dice Roll number " + i + " - " + " your position : " + currentPosition);
 
             }
             while (currentPosition < 100);
-            Console.WriteLine("Game over!");
-            Console.WriteLine("You reached " + currentPosition);
+            Console.WriteLine("Game over! You rolled the dice " + i + " times to win the game");
         }
         static int Roll()
         {
