@@ -37,6 +37,9 @@ namespace Snake_And_Ladder_simulator
             {
                 case LADDER:
                     currentPosition += diceValue;
+                    if (currentPosition > 100)
+                        currentPosition -= diceValue;
+
                     break;
                 case SNAKE:
                     currentPosition -= diceValue;
