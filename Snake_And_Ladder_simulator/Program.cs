@@ -5,6 +5,7 @@ namespace Snake_And_Ladder_simulator
     class Program
     {
         //constants
+        const int START_POINT = 0;
         const int LADDER = 1;
         const int SNAKE = 2;
         const int NO_PLAY = 3;
@@ -12,10 +13,15 @@ namespace Snake_And_Ladder_simulator
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Snake and Ladder Simulator !");
-            int numberRolled = Roll();
-            Console.WriteLine("You rolled " + numberRolled);
-            int position = Movement(numberRolled);
-            Console.WriteLine("Your position : " + position);
+            do
+            {
+                int numberRolled = Roll();
+                currentPosition = Movement(numberRolled);
+
+            }
+            while (currentPosition < 100);
+            Console.WriteLine("Game over!");
+            Console.WriteLine("You reached " + currentPosition);
         }
         static int Roll()
         {
@@ -30,20 +36,18 @@ namespace Snake_And_Ladder_simulator
             switch (option)
             {
                 case LADDER:
-                    Console.WriteLine("Option selected : Ladder");
                     currentPosition += diceValue;
                     break;
                 case SNAKE:
-                    Console.WriteLine("Option selected : Snake");
                     currentPosition -= diceValue;
+                    if (currentPosition < 0)
+                        currentPosition = 0;
                     break;
                 case NO_PLAY:
-                    Console.WriteLine("Option selected : No Play");
                     break;
             }
             return currentPosition;
         }
-
     }
 }
 
