@@ -6,7 +6,7 @@ namespace Snake_And_Ladder_simulator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Welcome to Snake and Ladder Simulator !");
         }
     }
 }
